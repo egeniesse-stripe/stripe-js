@@ -80,14 +80,23 @@ export interface StripePaymentMethodMessagingElementOptions {
     | 'SE';
 
   /**
+   * @deprecated
+   * Use themes via the Element Appearance API instead.
+   * 
    * The logo color to display in the message. Defaults to black
    */
   logoColor?: 'black' | 'white' | 'color';
 
   /**
-   * The font size of the promotional message.
+   * Metadata used to identify the user session for analytics purposes
    */
   metaData?: {
-    messagingClientReferenceId: string | null;
+    userSessionId?: string | null;
+    /**
+     * @deprecated
+     * Use userSessionId instead.
+     */
+    messagingClientReferenceId?: string | null;
+
   };
 }
